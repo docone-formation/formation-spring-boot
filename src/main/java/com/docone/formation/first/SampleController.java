@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class SampleController {
     
     @Autowired HelloService helloService;
-
+    
     @GetMapping("/hello")
-    String hello(String firstName, String lastName) {
+    public String hello(String firstName, String lastName) {
         return helloService.sayHello(firstName, lastName);
     }
+    
 
 }
