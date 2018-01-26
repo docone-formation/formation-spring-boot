@@ -10,8 +10,8 @@ public class SampleController {
     @Autowired HelloService helloService;
 
     @GetMapping("/hello")
-    String home() {
-        return helloService.sayHello();
+    String hello(String firstName, String lastName) {
+        return helloService.sayHello(firstName, lastName);
     }
 
 }
