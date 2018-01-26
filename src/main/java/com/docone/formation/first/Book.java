@@ -2,9 +2,14 @@ package com.docone.formation.first;
 
 public class Book {
 
-    private final long id;
+    private Long id;
     private String titre;
     private String auteur;
+    
+    @SuppressWarnings("unused")
+    private Book() {
+        // Empty constructor for serializer
+    }
     
     public Book(long id, String titre, String auteur) {
         this.id = id;
@@ -14,8 +19,12 @@ public class Book {
     
     /* ... Getter and Setter ... */
     
-    public long getId() {
+    public Long getId() {
         return id;
+    }
+    
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitre() {

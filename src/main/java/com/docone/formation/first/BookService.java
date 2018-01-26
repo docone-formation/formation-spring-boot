@@ -28,6 +28,14 @@ public class BookService {
         return new ArrayList<>(books.values());
     }
     
+    public void insertOrUpdate(Book book) {
+        if (book.getId() == null) {
+            addBook(book.getTitre(), book.getAuteur());
+        } else {
+            books.put(book.getId(), book);
+        }
+    }
+    
     private void addBook(String title, String author) {
         long id = maxId++;
         books.put(id, new Book(id, title, author));
