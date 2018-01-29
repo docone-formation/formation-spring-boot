@@ -1,4 +1,4 @@
-package com.docone.formation.first;
+package com.docone.formation.first.service;
 
 import org.springframework.stereotype.Service;
 
