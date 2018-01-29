@@ -3,6 +3,7 @@ package com.docone.formation.first.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -13,16 +14,16 @@ public class Book {
     @SequenceGenerator(name="BOOK_SEQ", sequenceName="BOOK_SEQ", allocationSize = 1)
     private Long id;
     private String titre;
-    private String auteur;
+    @ManyToOne private Author author;
     
     @SuppressWarnings("unused")
     private Book() {
         // Empty constructor for serializer
     }
     
-    public Book(String titre, String auteur) {
+    public Book(String titre, Author author) {
         this.titre = titre;
-        this.auteur = auteur;
+        this.author = author;
     }
     
     
@@ -45,12 +46,12 @@ public class Book {
         this.titre = titre;
     }
 
-    public String getAuteur() {
-        return auteur;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuteur(String auteur) {
-        this.auteur = auteur;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
 }
