@@ -53,7 +53,10 @@ public class BiblioService {
     }
 
     private void addBook(String title, Author author) {
-        bookRepo.save(new Book(title, author));
+        Book book = new Book(title, author);
+        book.addChapter("Intro");
+        book.addChapter("Chaptitre 1");
+        book = bookRepo.save(book);
     }
 }
 
